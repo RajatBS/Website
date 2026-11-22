@@ -214,7 +214,7 @@ form{display:grid;gap:1rem}
 .points{list-style:none;padding:0;display:grid;gap:.3rem;max-width:40rem}
 .points li{position:relative;padding-left:1.1rem}
 .points li::before{content:"";position:absolute;left:0;top:.8em;width:.42rem;height:1px;background:currentColor;opacity:.7}
-@media (min-width:900px) and (max-height:800px){
+@media (min-width:900px) and (max-height:880px){
   .cv .role,.cv .desc{font-size:1rem}
   .cv .items{gap:.75rem}
   .cv{padding-top:1rem;padding-bottom:1rem}
@@ -232,3 +232,8 @@ form{display:grid;gap:1rem}
 @keyframes gh-wave{0%,100%{rotate:0deg}25%{rotate:-14deg}50%{rotate:10deg}75%{rotate:-6deg}}
 @media (hover:none){.gh-mark{opacity:1;transform:translateY(-135%) scale(.85)}}
 @media (prefers-reduced-motion:reduce){.gh-mark{transition:opacity .2s}.cta.gh:hover .gh-mark{animation:none}}
+/* Slide 2 headings stay on one line on desktop, so the slide fits one screen. */
+@media (min-width:900px){
+  .cv-grid>div{container-type:inline-size}
+  .cv h2{font-size:min(clamp(1.9rem,2.9vw,2.75rem),8.4cqi)}
+}
