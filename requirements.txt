@@ -1,0 +1,4 @@
+Django>=5.2,<5.3
+whitenoise>=6.7
+python-dotenv>=1.0
+brotli>=1.1

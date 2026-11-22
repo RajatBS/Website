@@ -1,0 +1,24 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rajat Shetty</title>
+<meta name="description" content="Rajat Shetty, undergraduate in Mathematics and Computer Science at Manipal Institute of Technology. Simulations across computer science, mathematics and physics.">
+<meta name="theme-color" content="#e7dcc5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rajat Shetty">
+<meta property="og:description" content="Simulations at the boundary of computer science, mathematics and physics.">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<link rel="icon" href="{% static 'core/favicon.svg' %}" type="image/svg+xml">
+<link rel="preload" href="{% static 'core/fonts/space-mono-700.woff2' %}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{% static 'core/fonts/barlow-400.woff2' %}" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=" loading"</script>
+<link rel="stylesheet" href="{% static 'core/css/site.css' %}">
+<script src="{% static 'core/js/vendor.js' %}" defer></script>
+<script src="{% static 'core/js/site.js' %}" defer></script>
+</head>
+<body>
+{% include "core/_body.html" %}
+</body>
+</html>
