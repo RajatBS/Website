@@ -237,3 +237,8 @@ form{display:grid;gap:1rem}
   .cv-grid>div{container-type:inline-size}
   .cv h2{font-size:min(clamp(1.9rem,2.9vw,2.75rem),8.4cqi)}
 }
+/* On big screens all text grows with the window (the name already does),
+   capped by the height so slide 2 still fits on one screen. */
+@media (min-width:861px){
+  html{font-size:clamp(100%,min(1.04vw,2.05vh),131.25%)}
+}
