@@ -12,9 +12,9 @@ a:hover{color:var(--hi-1)}
 :focus-visible{outline:2px solid var(--hi-2);outline-offset:4px}
 ::selection{background:var(--fg);color:var(--bg)}
 
-/* the deck: three full-height slides and a contact footer, snapping as you scroll */
+/* the deck: three full-height slides and a contact footer, scrolling freely */
 .deck{height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-type:none;scroll-behavior:smooth}
-.slide{position:relative;min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column}
+.slide{position:relative;min-height:100%;display:flex;flex-direction:column}
 .on-a{background:var(--ground-a);color:var(--text-a);--fg:var(--text-a);--bg:var(--ground-a);--muted:var(--muted-a)}
 .on-b{background:var(--ground-b);color:var(--text-b);--fg:var(--text-b);--bg:var(--ground-b);--muted:var(--muted-b)}
 
@@ -71,7 +71,7 @@ a:hover{color:var(--hi-1)}
 .cta:hover{background:var(--fg);color:var(--bg)}
 
 /* contact footer */
-.contact{scroll-snap-align:end;padding:clamp(2.5rem,6vh,4.5rem) var(--gutter) 1.75rem}
+.contact{padding:clamp(2.5rem,6vh,4.5rem) var(--gutter) 1.75rem}
 .contact h2{font-family:var(--display);font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.05;margin-bottom:1.75rem}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2.5rem clamp(2rem,6vw,6rem);max-width:68rem}
 .info{display:grid;grid-template-columns:auto 1fr;gap:.55rem 2rem;align-content:start}
@@ -97,7 +97,6 @@ form{display:grid;gap:1rem}
 }
 /* small or short screens: slides can outgrow the screen, so let them scroll freely */
 @media (max-width:860px),(max-height:719px){
-  .deck{scroll-snap-type:none}
 }
 @media (prefers-reduced-motion:reduce){
   .deck{scroll-behavior:auto}
@@ -247,5 +246,4 @@ form{display:grid;gap:1rem}
 .who{font-size:1.6rem;line-height:1.45;max-width:32em}
 @media (max-width:860px){.who{font-size:1.2rem}}
 /* Free scrolling: no snapping between slides. */
-.deck{scroll-snap-type:none!important}
-.slide,.contact{scroll-snap-align:none}
+html,body,.deck{scroll-snap-type:none!important}

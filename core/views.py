@@ -7,15 +7,19 @@ from django.views.decorators.http import require_safe
 
 
 @require_safe
-@cache_control(public=True, max_age=300, s_maxage=86400, stale_while_revalidate=604800)
 def home(request):
-    """The landing page. Nothing in it is per-visitor, so Vercel's CDN caches it;
-    each new deployment clears that cache."""
-    return render(
+    """The landing page.
+
+    Browsers always check for a fresh copy (so a new deploy shows up at once),
+    while Vercel's CDN keeps a cached copy for a day; each deploy clears it."""
+    response = render(
         request,
         "core/index.html",
         {"contact_email": settings.CONTACT_EMAIL, "github_url": settings.GITHUB_URL},
     )
+    response["Cache-Control"] = "public, max-age=0, must-revalidate"
+    response["Vercel-CDN-Cache-Control"] = "max-age=86400"
+    return response
 
 
 @require_safe

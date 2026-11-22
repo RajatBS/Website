@@ -8,7 +8,8 @@ class PageTests(SimpleTestCase):
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, 'href="https://github.com/RajatBS"')
         self.assertContains(r, 'data-to="rajat.b.shetty@gmail.com"')
-        self.assertIn("s-maxage", r["Cache-Control"])
+        self.assertIn("max-age=0", r["Cache-Control"])
+        self.assertIn("Vercel-CDN-Cache-Control", r.headers)
 
     def test_robots(self):
         self.assertEqual(self.client.get(reverse("robots")).status_code, 200)
