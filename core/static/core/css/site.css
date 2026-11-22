@@ -1,10 +1,3 @@
-/* Self-hosted fonts (latin subsets). */
-@font-face{font-family:"Barlow";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/barlow-400.woff2") format("woff2")}
-@font-face{font-family:"Barlow";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/barlow-500.woff2") format("woff2")}
-@font-face{font-family:"Barlow";font-weight:600;font-style:normal;font-display:swap;src:url("../fonts/barlow-600.woff2") format("woff2")}
-@font-face{font-family:"Barlow Condensed";font-weight:700;font-style:normal;font-display:swap;src:url("../fonts/barlow-condensed-700.woff2") format("woff2")}
-@font-face{font-family:"Space Mono";font-weight:700;font-style:normal;font-display:swap;src:url("../fonts/space-mono-700.woff2") format("woff2")}
-@font-face{font-family:"Noto Sans Math";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/noto-math-subset.woff2") format("woff2")}
 *,*::before,*::after{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{
