@@ -1,4 +1,4 @@
-# Rajat Shetty: portfolio site (Django, ready for Vercel)
+# Rajat Shetty: Portfolio site 
 
 A single landing page with the three-body spacetime scene, CV, a projects button that opens GitHub, and a contact form that opens the visitor's mail app.
 There's no database and no admin, so it runs on Vercel's free plan with nothing to set up.
