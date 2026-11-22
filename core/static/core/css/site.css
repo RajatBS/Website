@@ -13,7 +13,7 @@ a:hover{color:var(--hi-1)}
 ::selection{background:var(--fg);color:var(--bg)}
 
 /* the deck: three full-height slides and a contact footer, snapping as you scroll */
-.deck{height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.deck{height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-type:none;scroll-behavior:smooth}
 .slide{position:relative;min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column}
 .on-a{background:var(--ground-a);color:var(--text-a);--fg:var(--text-a);--bg:var(--ground-a);--muted:var(--muted-a)}
 .on-b{background:var(--ground-b);color:var(--text-b);--fg:var(--text-b);--bg:var(--ground-b);--muted:var(--muted-b)}
@@ -97,7 +97,7 @@ form{display:grid;gap:1rem}
 }
 /* small or short screens: slides can outgrow the screen, so let them scroll freely */
 @media (max-width:860px),(max-height:719px){
-  .deck{scroll-snap-type:y proximity}
+  .deck{scroll-snap-type:none}
 }
 @media (prefers-reduced-motion:reduce){
   .deck{scroll-behavior:auto}
@@ -134,7 +134,7 @@ form{display:grid;gap:1rem}
 .on-c{background:var(--ground-c);color:var(--text-c);--fg:var(--text-c);--bg:var(--ground-c);--muted:var(--muted-c);--hi-1:#ff9a85;--hi-2:#7fe0ae}
 .f-p{color:var(--f-p)} .f-m{color:var(--f-m)} .f-c{color:var(--f-c)}
 
-.name{font-family:"Space Mono","Courier New",monospace;font-weight:700;letter-spacing:-.06em;line-height:.9;--name-scale:.76}
+.name{font-family:"Space Mono","Courier New",monospace;font-weight:700;letter-spacing:-.06em;line-height:.9;--name-scale:.64}
 .hero[data-layout="side"]{--name-size:clamp(3.5rem,min(15.5vw,29vh),20rem)}
 .hero[data-layout="side"] .name .ln{display:block}
 .fields{font-family:var(--body);font-weight:600;font-size:clamp(1.2rem,2vw,1.7rem)}
@@ -244,5 +244,8 @@ form{display:grid;gap:1rem}
   .cv-inner{max-width:none}
 }
 /* A bigger intro under the name. */
-.who{font-size:1.32rem;line-height:1.5;max-width:34em}
-@media (max-width:860px){.who{font-size:1.15rem}}
+.who{font-size:1.6rem;line-height:1.45;max-width:32em}
+@media (max-width:860px){.who{font-size:1.2rem}}
+/* Free scrolling: no snapping between slides. */
+.deck{scroll-snap-type:none!important}
+.slide,.contact{scroll-snap-align:none}
